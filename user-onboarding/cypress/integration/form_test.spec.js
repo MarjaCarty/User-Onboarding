@@ -39,5 +39,17 @@ describe("User Onboarding App", () => {
     tosInput().should("not.be.checked");
     tosInput().check();
     tosInput().should("be.checked");
+    tosInput().uncheck();
+    tosInput().should("not.be.checked");
+  });
+
+  it("can submit form data", () => {
+    submitButton().should("be.disabled");
+    nameInput().type("new user");
+    emailInput().type("newEmail@abc.com");
+    passwordInput().type("blah blah");
+    tosInput().check();
+    submitButton().should("not.be.disabled");
+    submitButton().click();
   });
 });
