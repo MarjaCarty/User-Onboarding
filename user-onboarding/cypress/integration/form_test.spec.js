@@ -52,4 +52,22 @@ describe("User Onboarding App", () => {
     submitButton().should("not.be.disabled");
     submitButton().click();
   });
+
+  it("form validation if input left empty", () => {
+    nameInput().type("blah blah");
+    nameInput().clear();
+    cy.get("#usernameError").should("exist");
+
+    emailInput().type("blah blah");
+    emailInput().clear();
+    cy.get("#emailError").should("exist");
+
+    passwordInput().type("blah blah");
+    passwordInput().clear();
+    cy.get("#passwordError").should("exist");
+
+    tosInput().check();
+    tosInput().uncheck();
+    cy.get("#tosError").should("exist");
+  });
 });

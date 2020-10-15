@@ -18,10 +18,10 @@ export default function Form(props) {
     <form onSubmit={onSubmit}>
       <h2>Sign Up</h2>
       <div>
-        <div>{errors.username}</div>
-        <div>{errors.email}</div>
-        <div>{errors.password}</div>
-        <div>{errors.termsOfService}</div>
+        <div id="usernameError">{errors.username}</div>
+        <div id="emailError">{errors.email}</div>
+        <div id="passwordError">{errors.password}</div>
+        <div id="tosError">{errors.termsOfService}</div>
       </div>
       <label>
         Name
