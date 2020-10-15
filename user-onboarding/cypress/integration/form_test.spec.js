@@ -34,4 +34,10 @@ describe("User Onboarding App", () => {
       .type("blah blah")
       .should("have.value", "blah blah");
   });
+
+  it("can check checkbox", () => {
+    tosInput().should("not.be.checked");
+    tosInput().check();
+    tosInput().should("be.checked");
+  });
 });
